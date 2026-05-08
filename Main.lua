@@ -3369,8 +3369,10 @@ function Toastlib:Window(Settings)
 
 					local dropped = false
 					local db = false
+					local isLocked = false
 
 					local function ToggleDropdown()
+						if isLocked then return end
 						if db then return end
 						db = true
 						local defaultDropdownSize = 38
@@ -3689,8 +3691,8 @@ function Toastlib:Window(Settings)
 					lockIcon.Parent = lockOverlay
 
 					function DropdownFunctions:SetLocked(state)
+						isLocked = state
 						lockOverlay.Visible = state
-						interact.Active = not state
 					end
 
 					if Flag then

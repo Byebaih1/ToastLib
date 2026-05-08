@@ -3663,6 +3663,36 @@ function Toastlib:Window(Settings)
 						return OptionObjs[optionName] ~= nil
 					end
 
+					-- Lock overlay
+					local lockOverlay = Instance.new("Frame")
+					lockOverlay.Name = "LockOverlay"
+					lockOverlay.Size = UDim2.new(1, 0, 1, 0)
+					lockOverlay.BackgroundColor3 = Color3.fromRGB(26, 25, 23)
+					lockOverlay.BackgroundTransparency = 0.35
+					lockOverlay.BorderSizePixel = 0
+					lockOverlay.ZIndex = 10
+					lockOverlay.Visible = false
+					lockOverlay.Parent = dropdown
+					Instance.new("UICorner", lockOverlay).CornerRadius = UDim.new(0, 6)
+
+					local lockIcon = Instance.new("ImageLabel")
+					lockIcon.Name = "LockIcon"
+					lockIcon.Image = assets["lucide-lock"]
+					lockIcon.ImageColor3 = Color3.fromRGB(218, 119, 86)
+					lockIcon.ImageTransparency = 0
+					lockIcon.AnchorPoint = Vector2.new(1, 0.5)
+					lockIcon.BackgroundTransparency = 1
+					lockIcon.BorderSizePixel = 0
+					lockIcon.Position = UDim2.new(1, -12, 0.5, 0)
+					lockIcon.Size = UDim2.fromOffset(14, 14)
+					lockIcon.ZIndex = 11
+					lockIcon.Parent = lockOverlay
+
+					function DropdownFunctions:SetLocked(state)
+						lockOverlay.Visible = state
+						interact.Active = not state
+					end
+
 					if Flag then
 						Toastlib.Options[Flag] = DropdownFunctions
 					end

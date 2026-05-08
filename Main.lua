@@ -3668,7 +3668,7 @@ function Toastlib:Window(Settings)
 					-- Lock overlay
 					local lockOverlay = Instance.new("Frame")
 					lockOverlay.Name = "LockOverlay"
-					lockOverlay.Size = UDim2.new(1, 0, 1, 0)
+					lockOverlay.Size = UDim2.new(1, 0, 0, 38)
 					lockOverlay.BackgroundColor3 = Color3.fromRGB(26, 25, 23)
 					lockOverlay.BackgroundTransparency = 0.35
 					lockOverlay.BorderSizePixel = 0

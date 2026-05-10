@@ -3455,7 +3455,7 @@ function Toastlib:Window(Settings)
 						local checkmark = Instance.new("TextLabel")
 						checkmark.Name = "Checkmark"
 						checkmark.FontFace = Font.new(assets.interFont)
-						checkmark.Text = "โ“"
+						checkmark.Text = "✓"
 						checkmark.TextColor3 = Color3.fromRGB(231, 229, 228)
 						checkmark.TextSize = 13
 						checkmark.TextTransparency = 1
@@ -5622,7 +5622,7 @@ function Toastlib:Window(Settings)
 		local interactable = Instance.new("TextButton")
 		interactable.Name = "Interactable"
 		interactable.FontFace = Font.new(assets.interFont)
-		interactable.Text = "โ“"
+		interactable.Text = "✓"
 		interactable.TextColor3 = Color3.fromRGB(231, 229, 228)
 		interactable.TextSize = 17
 		interactable.TextTransparency = 0.2
@@ -5656,7 +5656,7 @@ function Toastlib:Window(Settings)
 
 		local styles = {
 			None = function() interactable:Destroy() end,
-			Confirm = function() interactable.Text = "โ“" end,
+			Confirm = function() interactable.Text = "✓" end,
 			Cancel = function() interactable.Text = "โ—" end
 		}
 

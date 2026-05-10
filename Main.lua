@@ -5657,7 +5657,7 @@ function Toastlib:Window(Settings)
 		local styles = {
 			None = function() interactable:Destroy() end,
 			Confirm = function() interactable.Text = "✓" end,
-			Cancel = function() interactable.Text = "โ—" end
+			Cancel = function() interactable.Text = "✗" end
 		}
 
 		local style = styles[Settings.Style] or function() interactable:Destroy() end
